@@ -142,4 +142,4 @@ autocmd FileType python nnoremap <buffer> <F5> :exec '!python3' shellescape(@%, 
 autocmd FileType tf setlocal shiftwidth=2
 
 " Neovim virtualenv
-let g:python3_host_prog = '/Users/aalsabbah/.virtualenvs/neovim/bin/python'
+let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
