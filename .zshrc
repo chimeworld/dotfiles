@@ -102,9 +102,12 @@ alias ls="ls -G"
 alias python="python3"
 alias code="cd ~/code"
 alias tcr="cd ~/code/terraform-control-repo"
+alias s3="cd ~/code/terraform-control-repo/static_configs/aws-s3/us-east-1"
 alias iam="cd ~/code/terraform-control-repo/static_configs/aws-iam/managed-policies"
 alias awssg="cd ~/code/terraform-control-repo/static_configs/aws-security-groups"
 alias sed="gsed"
+alias xargs="gxargs"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export EDITOR="/usr/local/bin/nvim"
 export KEYTIMEOUT=1
 
