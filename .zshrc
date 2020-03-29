@@ -101,18 +101,26 @@ alias vim="nvim"
 alias ls="ls -G"
 alias python="python3"
 alias code="cd ~/code"
-alias tcr="cd ~/code/terraform-control-repo"
-alias s3="cd ~/code/terraform-control-repo/static_configs/aws-s3/us-east-1"
-alias iam="cd ~/code/terraform-control-repo/static_configs/aws-iam/managed-policies"
-alias awssg="cd ~/code/terraform-control-repo/static_configs/aws-security-groups"
-alias sed="gsed"
-alias xargs="gxargs"
+
+# Backup .dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export EDITOR="/usr/local/bin/nvim"
 export KEYTIMEOUT=1
+
 # MySQL
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# Paths for GNU tools
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+# Block global pip install
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
+}
