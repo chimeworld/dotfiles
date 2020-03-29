@@ -110,7 +110,9 @@ alias xargs="gxargs"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export EDITOR="/usr/local/bin/nvim"
 export KEYTIMEOUT=1
-
+# MySQL
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
