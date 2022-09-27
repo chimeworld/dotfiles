@@ -1,8 +1,8 @@
 " empty comment
 " auto-install vim-plug and plugins
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -61,14 +61,12 @@ Plug 'DrXVII/vim_colors'
 Plug 'neutaaaaan/monosvkem'
 Plug 'logico-dev/typewriter'
 Plug 'schickele/vim'
-Plug 'nightsense/stellarized'
 Plug 'JarrodCTaylor/spartan'
 Plug 'sjl/badwolf'
 Plug 'saalaa/ancient-colors.vim'
 Plug 'zcodes/vim-colors-basic'
 Plug 'xiaody/thornbird.vim'
 Plug 'ronny/birds-of-paradise.vim'
-Plug 'DrSpatula/vim-buddy'
 Plug 'AlessandroYorba/Sierra'
 Plug 'aereal/vim-colors-japanesque'
 Plug 'YorickPeterse/happy_hacking.vim'
@@ -78,12 +76,7 @@ Plug 'kamwitsta/nordisk'
 Plug 'vim-scripts/ChocolateLiquor'
 Plug 'vim-scripts/PapayaWhip'
 Plug 'exitface/synthwave.vim'
-Plug 'nightsense/wonka'
-Plug 'nightsense/vimspectr'
-Plug 'nightsense/strawberry'
 Plug 'archSeer/colibri.vim'
-Plug 'nightsense/snow'
-Plug 'skreek/skeletor.vim'
 Plug 'phanviet/Sidonia'
 Plug 'KimNorgaard/vim-frign'
 Plug 'szorfein/fromthehell.vim'
@@ -103,7 +96,6 @@ set expandtab
 set shiftwidth=4
 colorscheme dim
 
-
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -116,9 +108,6 @@ let g:ctrlp_working_path_mode = 0
 " deoplete settings
 set completeopt-=preview
 set completeopt+=noinsert
-let g:neoinclude#paths = {'cpp': '/usr/local/include/c++/8.2.0', 'c': '/usr/local/include/'}
-call neoinclude#include#get_current_include_files()
-" let g:neoinclude#paths.c = '/usr/local/include'
 
 " Lightline config:
 let g:lightline = {'colorscheme': 'default'}
@@ -141,8 +130,6 @@ autocmd FileType python nnoremap <buffer> <F5> :exec '!python3' shellescape(@%, 
 " Terraform file tab size
 autocmd FileType tf setlocal shiftwidth=2
 
-" Neovim virtualenv
-let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
 " Move cursor with mousewheel
 set mouse=a
 map <ScrollWheelDown> j
