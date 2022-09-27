@@ -143,3 +143,7 @@ autocmd FileType tf setlocal shiftwidth=2
 
 " Neovim virtualenv
 let g:python3_host_prog = expand('$HOME/.virtualenvs/neovim/bin/python')
+" Move cursor with mousewheel
+set mouse=a
+map <ScrollWheelDown> j
+map <ScrollWheelUp> k
